@@ -1,0 +1,1 @@
+<view><block wx:for="{{activityImg}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="activityImg"><text>{{item.text}}</text><image src="{{item.src}}"></image></view></block></view>

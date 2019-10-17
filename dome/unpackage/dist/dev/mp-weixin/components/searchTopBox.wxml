@@ -1,0 +1,1 @@
+<view class="searchTopBox"><view class="cnt"><view class="iptCnt"><icon class="icon" type="search" size="20" color="#fff"></icon><input class="ipt" type="text" placeholder="商品编码/名称/条形码" placeholder-style="color:#fff"/></view><view class="chat"><image src="/static/chat.png"></image></view></view></view>

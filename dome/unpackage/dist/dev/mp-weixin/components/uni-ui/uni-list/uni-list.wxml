@@ -1,0 +1,1 @@
+<view class="uni-list"><block wx:if="{{headTitle}}"><view class="uni-list-head">{{headTitle}}</view></block><slot></slot></view>

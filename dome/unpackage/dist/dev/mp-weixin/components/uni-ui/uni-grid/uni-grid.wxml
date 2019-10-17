@@ -1,0 +1,1 @@
+<view class="uni-grid"><block wx:if="{{headTitle}}"><view class="uni-grid-head">{{headTitle}}</view></block><view class="{{['uni-grid-body',(showBorder)?'border':'']}}" style="{{'border-left:'+(showBorder?'1px '+borderColor+' solid':'none')+';'}}" id="{{elId}}"><slot></slot></view></view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "商品分类",
+  "usingComponents": {
+    "search-box": "/components/searchTopBox",
+    "number-box": "/components/uni-ui/numberBox/numberBox"
+  }
+}
