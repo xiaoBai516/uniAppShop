@@ -282,7 +282,7 @@ export default{
 			for(let cItem of this.specChildList){
 				if(cItem.pid === item.id){
 					this.$set(cItem, 'selected', true);
-					this.specSelected.push(cItem);
+					// this.specSelected.push(cItem);
 					break; //forEach不能使用break
 				}
 			}

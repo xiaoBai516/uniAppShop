@@ -113,7 +113,7 @@ export default {
 		},
 		navToList(sid, tid){
 			uni.navigateTo({
-				url: `/pages/product/list?fid=${this.currentId}&sid=${sid}&tid=${tid}`
+				url: `/pages/product/product`
 			})
 		},
 		//数量
