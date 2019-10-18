@@ -1,11 +1,13 @@
 <template>
 	<view class="searchTopBox">
 		<view class="cnt">  
-			<view class="iptCnt">
+			<view class="iptCnt" @click="navToList">
 				<icon type="search" size="20" class="icon" color="#fff"/>
-				<input class="ipt" type="text" placeholder="商品编码/名称/条形码" placeholder-style="color:#fff"></input>
+				<input class="ipt" type="text" placeholder="商品编码/名称/条形码" placeholder-style="color:#fff" v-model="iptval"></input>
 			</view>
-			<view class="chat"><image  src="/static/chat.png"></image></view>
+			<view class="chat">
+				<slot></slot>
+			</view>
 		</view>
 	</view>
 </template>
@@ -14,17 +16,26 @@
 	export default {
 		data() {
 			return {
-				
+				iptval:""
 			};
 		},
 		props:{
-			
+			showClick: { //是否显示箭头
+				type: [Boolean, String],
+				default: true
+			}
 		},
 		created() {
-			
 		},
 		methods:{
-			
+			//搜索调整  商品列表
+			navToList(){
+				if(this.showClick ==true){
+					uni.navigateTo({
+						url: '/pages/searchPage/searchPage'
+					})
+				}
+			},
 		}
 	}
 </script>
@@ -38,28 +49,23 @@
 		background-color: #FE7F79;
 		height: 100rpx;
 		box-sizing: border-box;
-		padding-top: 15rpx;
 		z-index: 222;
 		.cnt {
-			height: 70rpx;
 			margin-left: 5%;
 			display: flex;
 			border-radius: 35rpx;
 		}
 		.chat{
 			width:120rpx;
-			height: 60rpx;
-			image{
-				margin-left:30rpx;
-				width:60rpx;
-				height: 60rpx;
-			}
+			color: #fff;
 		}
 		.iptCnt{
 			flex: 1 1;
 			background-color: #FF9898;
 			color: #fff;
 			border-radius: 60rpx;
+			height: 70rpx;
+			margin-top: 15rpx;
 		}
 		.icon{
 			float:left;

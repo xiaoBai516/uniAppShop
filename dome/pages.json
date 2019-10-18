@@ -6,6 +6,17 @@
 				"navigationBarTitleText": "首页"
 			}
 		},{
+		    "path" : "pages/product/list",
+		    "style" : {
+				"enablePullDownRefresh": true,
+				"navigationBarTitleText": "商品列表"
+			}
+		},{
+			"path": "pages/searchPage/searchPage",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		},{
 			"path": "pages/set/set",
 			"style": {
 				"navigationBarTitleText": "设置"
@@ -17,12 +28,6 @@
 				"app-plus": {
 					"bounce": "none"
 				}
-			}
-		},{
-		    "path" : "pages/product/list",
-		    "style" : {
-				"enablePullDownRefresh": true,
-				"navigationBarTitleText": "商品列表"
 			}
 		},{
 			"path": "pages/user/user",
@@ -75,6 +80,7 @@
 		{
 			"path": "pages/commodity/commodity",
 			"style": {
+				"enablePullDownRefresh": true,
 				"navigationBarTitleText": "商品分类"
 			}
 		}

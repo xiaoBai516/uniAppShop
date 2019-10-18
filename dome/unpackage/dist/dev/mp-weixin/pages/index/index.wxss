@@ -27,6 +27,11 @@
 page {
   background: #EFEFEF;
 }
+.search-images {
+  width: 120rpx;
+  height: 90rpx;
+  padding: 15rpx 30rpx;
+}
 .carousel {
   height: 375rpx;
 }

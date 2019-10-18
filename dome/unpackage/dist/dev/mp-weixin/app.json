@@ -1,9 +1,10 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/product/list",
+        "pages/searchPage/searchPage",
         "pages/set/set",
         "pages/order/order",
-        "pages/product/list",
         "pages/user/user",
         "pages/money/pay",
         "pages/money/paySuccess",
@@ -60,5 +61,5 @@
         ]
     },
     "usingComponents": {},
-    "sitemapLocation": "sitemap95.json"
+    "sitemapLocation": "sitemap47.json"
 }

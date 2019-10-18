@@ -33,11 +33,9 @@
   height: 100rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding-top: 15rpx;
   z-index: 222;
 }
 .searchTopBox .cnt {
-    height: 70rpx;
     margin-left: 5%;
     display: -webkit-box;
     display: -webkit-flex;
@@ -47,12 +45,7 @@
 }
 .searchTopBox .chat {
     width: 120rpx;
-    height: 60rpx;
-}
-.searchTopBox .chat image {
-      margin-left: 30rpx;
-      width: 60rpx;
-      height: 60rpx;
+    color: #fff;
 }
 .searchTopBox .iptCnt {
     -webkit-box-flex: 1;
@@ -62,6 +55,8 @@
     background-color: #FF9898;
     color: #fff;
     border-radius: 60rpx;
+    height: 70rpx;
+    margin-top: 15rpx;
 }
 .searchTopBox .icon {
     float: left;

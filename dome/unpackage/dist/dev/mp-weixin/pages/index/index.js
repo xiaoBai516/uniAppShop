@@ -200,8 +200,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var _vuex = __webpack_require__(/*! vuex */ 10);
-var _api = _interopRequireDefault(__webpack_require__(/*! ../../utils/api.js */ 27));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var searchBox = function searchBox() {return __webpack_require__.e(/*! import() | components/searchTopBox */ "components/searchTopBox").then(__webpack_require__.bind(null, /*! @/components/searchTopBox */ 127));};var activityImg = function activityImg() {return __webpack_require__.e(/*! import() | components/activityImg */ "components/activityImg").then(__webpack_require__.bind(null, /*! @/components/activityImg */ 134));};var promotionGood = function promotionGood() {return __webpack_require__.e(/*! import() | components/promotionGood */ "components/promotionGood").then(__webpack_require__.bind(null, /*! @/components/promotionGood */ 141));};var _default =
+var _api = _interopRequireDefault(__webpack_require__(/*! ../../utils/api.js */ 27));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var searchBox = function searchBox() {return __webpack_require__.e(/*! import() | components/searchTopBox */ "components/searchTopBox").then(__webpack_require__.bind(null, /*! @/components/searchTopBox */ 135));};var activityImg = function activityImg() {return __webpack_require__.e(/*! import() | components/activityImg */ "components/activityImg").then(__webpack_require__.bind(null, /*! @/components/activityImg */ 142));};var promotionGood = function promotionGood() {return __webpack_require__.e(/*! import() | components/promotionGood */ "components/promotionGood").then(__webpack_require__.bind(null, /*! @/components/promotionGood */ 149));};var _default =
 
 
 
@@ -306,6 +308,12 @@ var _api = _interopRequireDefault(__webpack_require__(/*! ../../utils/api.js */ 
       var id = item.title;
       uni.navigateTo({
         url: "/pages/product/product?id=".concat(id) });
+
+    },
+    //搜索调整  商品列表
+    navToList: function navToList() {
+      uni.navigateTo({
+        url: "/pages/product/list?fid=1&sid=5&tid=9" });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

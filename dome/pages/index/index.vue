@@ -1,7 +1,9 @@
 <template>
 	<view class="content">
 		<!-- 搜索条 -->
-		<search-box></search-box>
+		<search-box>
+			<image class="search-images" src="/static/chat.png"></image>
+		</search-box>
 		<!-- 轮播图 -->
 		<swiper class="carousel" indicator-dots="true" indicator-color="#BB2E3A" indicator-active-color="#FF9899">
 			<swiper-item v-for="(item, index) in carouselList" :key="index" class="carousel-item">
@@ -183,13 +185,24 @@ import promotionGood from '@/components/promotionGood';
 				uni.navigateTo({
 					url: `/pages/product/product?id=${id}`
 				})
-			}
+			},
+			//搜索调整  商品列表
+			navToList(){
+				uni.navigateTo({
+					url: `/pages/product/list?fid=1&sid=5&tid=9`
+				})
+			},
 		}
 	}
 </script>
 <style  lang="scss">
 	page{
 		background: #EFEFEF;
+	}
+	.search-images{
+		width: 120rpx;
+		height: 90rpx;
+		padding: 15rpx 30rpx;
 	}
 	//轮播图
 	.carousel{

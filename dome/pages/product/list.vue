@@ -1,5 +1,10 @@
 <template>
 	<view class="content">
+		<!-- 搜索条 -->
+		<search-box :show-click="false">
+			<icon class="iconfont icon-gouwuche" @click="clickCartFn"></icon>
+			<text class="search-cart">5</text>
+		</search-box>
 		<view class="navbar" :style="{position:headerPosition,top:headerTop}">
 			<view class="nav-item" :class="{current: filterIndex === 0}" @click="tabClick(0)">
 				综合排序
@@ -55,16 +60,18 @@
 </template>
 
 <script>
+	import searchBox from '@/components/searchTopBox';
 	import uniLoadMore from '@/components/uni-ui/uni-load-more/uni-load-more.vue'
 	export default {
 		components: {
+			searchBox,
 			uniLoadMore
 		},
 		data() {
 			return {
 				cateMaskState: 0, //分类面板展开状态
 				headerPosition:"fixed",
-				headerTop:"0px",
+				headerTop:"100rpx",
 				loadingType: 'more', //加载更多状态
 				filterIndex: 0, 
 				cateId: 0, //已选三级分类id
@@ -75,9 +82,6 @@
 		},
 		
 		onLoad(options){
-			// #ifdef H5
-			this.headerTop = document.getElementsByTagName('uni-page-head')[0].offsetHeight+'px';
-			// #endif
 			this.cateId = options.tid;
 			this.loadCateList(options.fid,options.sid);
 			this.loadData();
@@ -202,6 +206,11 @@
 					url: `/pages/product/product?id=${id}`
 				})
 			},
+			clickCartFn(){
+				uni.navigateTo({
+					url: '/pages/cart/cart'
+				})
+			},
 			stopPrevent(){}
 		},
 	}
@@ -212,9 +221,29 @@
 		background:  #f8f8f8;
 	}
 	.content{
-		padding-top: 96rpx;
+		padding-top: 200rpx;
 	}
-
+	/*搜索栏内容*/
+	.icon-gouwuche{
+		width: 100%;
+		line-height: 100rpx;
+		font-size: 39rpx;
+		text-align: center;
+	}
+	.search-cart{
+		position: absolute;
+		top: 20rpx;
+		right: 20rpx;
+		background: #fff;
+		width: 40rpx;
+		height: 40rpx;
+		line-height: 40rpx;
+		text-align: center;
+		color: #f00;
+		border-radius: 50%;
+		font-size: 24rpx;
+	}
+	/*筛选*/
 	.navbar{
 		position: fixed;
 		left: 0;
@@ -295,7 +324,7 @@
 		bottom: 0;
 		width: 100%;
 		background: rgba(0,0,0,0);
-		z-index: 95;
+		z-index:1195;
 		transition: .3s;
 		
 		.cate-content{

@@ -36,6 +36,7 @@ page,
   display: -ms-flexbox;
   display: flex;
 }
+/* 左边菜单 */
 .left-aside {
   width: 200rpx;
   height: 100%;
@@ -82,6 +83,7 @@ page,
       border-radius: 0 4px 4px 0;
       opacity: .8;
 }
+/* 	右边内容 */
 .right-aside {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -91,20 +93,126 @@ page,
   padding-left: 20rpx;
   margin-left: 200rpx;
 }
-.s-item {
+/* 筛选 头部*/
+.navbar {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 70rpx;
-  padding-top: 8rpx;
-  font-size: 28rpx;
-  color: #303133;
+  width: 100%;
+  height: 80rpx;
+  background: #fff;
+  -webkit-box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.06);
+          box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.06);
+  z-index: 10;
 }
+.navbar .nav-item {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100%;
+    font-size: 30rpx;
+    color: #303133;
+    position: relative;
+}
+.navbar .nav-item.current {
+      color: #fa436a;
+}
+.navbar .nav-item.current:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+        width: 120rpx;
+        height: 0;
+        border-bottom: 4rpx solid #fa436a;
+}
+.navbar .p-box {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 6rpx;
+    margin-left: 10rpx;
+}
+.navbar .p-box .iconfont {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      font-size: 18rpx;
+      line-height: 1;
+      font-weight: 700;
+      color: #888;
+}
+.navbar .p-box .iconfont.active {
+        color: #fa436a;
+}
+.navbar .cate-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100%;
+    width: 80rpx;
+    position: relative;
+    font-size: 44rpx;
+}
+.navbar .cate-item:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      border-left: 1px solid #ddd;
+      width: 0;
+      height: 36rpx;
+}
+/*滚动*/
+.scrollItem {
+  overflow: hidden;
+  height: calc(100% - 80px);
+}
+/*商品列表*/
 .t-list {
   display: -webkit-box;
   display: -webkit-flex;
@@ -166,5 +274,114 @@ page,
       bottom: 20rpx;
       right: 55rpx;
       width: 230rpx;
+}
+/* 分类 */
+.cate-mask {
+  position: fixed;
+  left: 0;
+  top: 0px;
+  bottom: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 999;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+.cate-mask .cate-content {
+    width: 630rpx;
+    height: 100%;
+    background: #fff;
+    float: right;
+    -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+.cate-mask.none {
+    display: none;
+}
+.cate-mask.show {
+    background: rgba(0, 0, 0, 0.4);
+}
+.cate-mask.show .cate-content {
+      -webkit-transform: translateX(0);
+          -ms-transform: translateX(0);
+              transform: translateX(0);
+}
+.cate-list {
+  padding: 40rpx 30rpx;
+}
+.cate-list .cate-box {
+    margin-bottom: 20rpx;
+}
+.cate-list .cate-box .cate-title {
+      color: #333333;
+      font-size: 30rpx;
+}
+.cate-list .cate-box .cate-cnt {
+      padding: 20rpx 0 0;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+}
+.cate-list .cate-box .cate-cnt text {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        border: 1px solid #eee;
+        margin-right: 30rpx;
+        margin-bottom: 20rpx;
+        border-radius: 4rpx;
+        min-width: 60rpx;
+        height: 60rpx;
+        padding: 0 20rpx;
+        font-size: 28rpx;
+        color: #303133;
+}
+.cate-list .cate-box .cate-cnt .selected {
+        background: #fbebee;
+        color: #fa436a;
+}
+.cate-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding: 0 30rpx;
+  position: fixed;
+  bottom: 30rpx;
+  left: 0;
+  width: 100%;
+}
+.cate-btn .btn {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 48%;
+}
+.cate-btn .confirm {
+    background: #f00;
+    color: #fff;
 }
 

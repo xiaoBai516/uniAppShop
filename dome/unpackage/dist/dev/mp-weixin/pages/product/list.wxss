@@ -28,8 +28,29 @@ page, .content {
   background: #f8f8f8;
 }
 .content {
-  padding-top: 96rpx;
+  padding-top: 200rpx;
 }
+/*搜索栏内容*/
+.icon-gouwuche {
+  width: 100%;
+  line-height: 100rpx;
+  font-size: 39rpx;
+  text-align: center;
+}
+.search-cart {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  background: #fff;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  color: #f00;
+  border-radius: 50%;
+  font-size: 24rpx;
+}
+/*筛选*/
 .navbar {
   position: fixed;
   left: 0;
@@ -154,7 +175,7 @@ page, .content {
   bottom: 0;
   width: 100%;
   background: transparent;
-  z-index: 95;
+  z-index: 1195;
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;
